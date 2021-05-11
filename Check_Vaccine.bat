@@ -1,1 +1,1 @@
-Powershell.exe -NoProfile -executionpolicy Unrestricted -File  .\Check_Vaccine.ps1
+Powershell.exe -NoProfile -executionpolicy Bypass -File  .\Check_Vaccine.ps1
