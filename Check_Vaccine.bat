@@ -1,0 +1,1 @@
+Powershell.exe -NoProfile -executionpolicy Unrestricted -File  .\Check_Vaccine.ps1
