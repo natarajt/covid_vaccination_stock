@@ -49,7 +49,7 @@ for(;;) {
 
     echo " "
     $now=Get-Date    
-    "[ $now ] :: Resuming Enquiry process"
+    "[ $now ] :: Enquiring centers in $district_name - $state_name "
     echo " "
     $stock=0
     $center_map=@{}
