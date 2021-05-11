@@ -1,4 +1,4 @@
-﻿$state_map = @()
+$state_map = @()
 $district_map = @{}
 
 $headers = @{
@@ -35,12 +35,22 @@ $GridArguments = @{
 }
 
 $loc_id=""
-while([string]::IsNullOrEmpty($loc_id)){
-    "Please select a District to continue further "
+while([string]::IsNullOrEmpty($loc_id)){    
+    
     $loc_id = $state_map | Select NAME,District| sort NAME,District|Out-GridView @GridArguments | foreach {
         $state_name=$_.NAME
         $district_name=$_.District
         $district_map.$state_name.$district_name
+    }
+
+    if([string]::IsNullOrEmpty($loc_id)){
+        "Please select a District to continue further :"
+        $usr_sel = Read-Host -Prompt 'Enter 0 to Exit or 1 to Continue '    
+        if($usr_sel -eq '0') {
+            exit
+        }else {
+            continue
+        }
     }
 }
 
